@@ -3,6 +3,7 @@ import React from 'react';
 class formikComponent extends React.Component {
   constructor() {
     super();
+
     this.state = {};
   }
   // intialValue={
