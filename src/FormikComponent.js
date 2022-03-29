@@ -18,14 +18,7 @@ class formikComponent extends React.Component {
     return (
       <>
         <h3>Formik Component</h3>
-      </>
-    );
-  }
-}
-
-export default formikComponent;
-
-<Formik
+        <Formik
 initialValues={this.intialValue }
 validate={}
 onSubmit={}
@@ -41,7 +34,7 @@ onSubmit={}
   /* and other goodies */
 }) => (
 
-<form onSubmit={(e) => this.handleSubmit(e)}>
+<form>
   <div>
     <label>First Name</label>
     <input
@@ -116,3 +109,11 @@ onSubmit={}
 
 )}
 </Formik>
+
+      </>
+    );
+  }
+}
+
+export default formikComponent;
+
