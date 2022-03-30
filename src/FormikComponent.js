@@ -17,7 +17,7 @@ class formikComponent extends React.Component {
   Validate = (value) => {
     var error = {};
     if (value.firstName === '') error.firstName = 'First Name is Required';
-    if (value.lasttName === '') error.lastName = 'Last Name is Required';
+    if (value.lastName === '') error.lastName = 'Last Name is Required';
     if (value.email === '') error.email = 'Email is Required';
     if (value.gender === '') error.gender = 'Gender is Required';
     return error;
@@ -34,7 +34,7 @@ class formikComponent extends React.Component {
         <Formik
           initialValues={this.intialValue}
           validate={(value) => this.Validate(value)}
-          onSubmit={(value) => this.handleSubmit(value)}
+          onSubmit={(data) => this.handleSubmit(data)}
         >
           {({
             values,
@@ -42,7 +42,6 @@ class formikComponent extends React.Component {
             errors,
             handleBlur,
             touched,
-
             handleSubmit,
             isSubmitting,
             /* and other goodies */
@@ -104,12 +103,19 @@ class formikComponent extends React.Component {
                   onBlur={handleBlur}
                 />
                 Male
-                <input type="radio" name="gender" value="female" />
+                <input
+                  type="radio"
+                  name="gender"
+                  value="female"
+                  value={values.gender}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
                 Female
                 <br />
-                <span style={{ color: 'red' }}>
+                {/* <span style={{ color: 'red' }}>
                   {touched.gender && errors.gender}
-                </span>
+                </span> */}
               </div>
               <br />
               <br />
